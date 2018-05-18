@@ -1,0 +1,5 @@
+本项目采用网易基于640px的设计初稿的移动端适配方案：
+（1）首先将视口设置为<meta name="viewport" content="initial-scale=1,maximum-scale=1, minimum-scale=1">
+（2）为方便计算，将html的初始化font-size设置为100px,css样式采用弹性盒模型和设计初稿像素除以100的以rem为单位布置
+（3）设置js,将html的font-size根据页面动态生成，当页面横向分辨率大于640px，就设置仍为640px，因为deviceWidth大于640时，则物理分辨率大于1280（看设备的devicePixelRatio这个值），应该去访问pc网站。
+（4）设置字体时，此种方案采用了media查询，根据不同情况设置不同字体大小

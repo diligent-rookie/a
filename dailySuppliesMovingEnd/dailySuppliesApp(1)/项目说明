@@ -1,0 +1,6 @@
+本项目采用淘宝的移动端进行适配的，基于750px的设计初稿，利用弹性盒模型进行布局：
+（1）首先在html文件中必须设置viewport：如<meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+（2）在js文件中动态设置viewport的scale和动态计算html的font-size，同时根据设备像素比对body的字体大小进行了设置，避免使用了media查询一一设置
+（3）由于动态生成的html的font-size，生成的font-size由于不一定是整数值，不好计算，利用了scss的函数工具，在scss环境下编写项目的css样式，可以直接按照css书写规则写（因为scss完全兼容css），也可以利用scss规则书写，提高代码书写效率
+（4）引入scss的工具函数后，直接根据设计稿纸的px进行传参书写即可
+（5）最后在html中引入js和scss生成的css样式即可

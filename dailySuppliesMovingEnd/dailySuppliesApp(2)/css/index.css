@@ -1,0 +1,147 @@
+*{padding:0;margin:0;list-style:none;border:0 none;text-decoration:none;color:#fff;}
+@media screen and (max-width:321px){
+    body{font-size:15px}
+}
+
+@media screen and (min-width:321px) and (max-width:400px){
+    body{font-size:16px}
+}
+
+@media screen and (min-width:400px){
+    body{font-size:18px}
+}
+body{
+    background-color:#eee;
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('../iconfont/iconfont.eot');
+    src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../iconfont/iconfont.woff') format('woff'),
+    url('../iconfont/iconfont.ttf') format('truetype'),
+    url('../iconfont/iconfont.svg#iconfont') format('svg');
+}
+@font-face {
+    font-family: 'icon-font';
+    src: url('../search/iconfont.eot');
+    src: url('../search/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../search/iconfont.woff') format('woff'),
+    url('../search/iconfont.ttf') format('truetype'),
+    url('../search/iconfont.svg#iconfont') format('svg');
+}
+.icon-location{
+    font-family:"icon-font" !important;
+    color:#fff;
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-style:normal;
+}
+nav ul ,footer ul{
+    width: 6.4rem;
+    height:1.5rem;
+    /*当padding采用百分比形式时以父元素的宽度为基准*/
+    display:flex;
+    background-color:#e44a43;
+    justify-content:space-around;
+    align-items:center;
+}
+nav ul li,footer ul li{
+    font-family: "microsoft yahei";
+    color:#fff;
+    text-align:center;
+}
+nav ul a:hover,footer ul a:hover{
+    color: #86ffb1;
+}
+section{
+    width: 6.4rem;
+    height: 3.48rem;
+    background:url("../images/banner.jpg") no-repeat center center;
+    background-size:cover;
+}
+section .search{
+    display: flex;
+    width: 6.4rem;
+    height: 0.8rem;
+    justify-content:space-around;
+    align-items: center;
+    background-color:rgba(0,0,0,0.3);
+}
+.search .inp{
+    width: 5.68rem;
+    height:.42rem;
+    display: flex;
+    justify-content:flex-end;
+    position:relative;
+    line-height:.42rem;
+    color:#ccc;
+    padding-left:0.1rem;
+}
+.inp .search-nav{
+    width: 5.68rem;
+    height:.42rem;
+    border:1px solid #eee;
+    border-radius:20px;
+    line-height:.42rem;
+    background-color:rgba(0,0,0,0.3);
+}
+label{
+    position:absolute;
+    left:2.37rem;
+    top:0.02rem;
+}
+section  #inp{
+    padding-left:0.2rem;
+    color:#ccc;
+}
+.inp span{
+    font-family:"icon-font" !important;
+    color:#fff;
+    position:absolute;
+    right:0.2rem;
+    top:0.02rem;
+}
+.area{
+    width: 6.4rem;
+    height:1.76rem;
+    display:flex;
+    text-align:center;
+    background-color:#fff;
+    justify-content:space-around;
+    align-items:center;
+}
+.area li{
+    width: 1.44rem;
+    height: 1.12rem;
+    border-radius:20%;
+    line-height: 1.12rem;
+}
+.new{
+    float:left;
+    width: 6.4rem;
+    height:auto;
+    margin:0.1rem auto;
+    background-color:#fff;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+ul.new li{
+    width:40%;
+    height:auto;
+    margin:0.1rem;
+}
+.new li img{
+    width:100%;
+    height:auto;
+}
+.banners{
+    width: 6.4rem;
+}
+.banners img{
+    display: block;
+    width: 6.4rem;
+    height:auto;
+}

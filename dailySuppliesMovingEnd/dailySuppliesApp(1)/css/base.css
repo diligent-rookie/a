@@ -1,0 +1,21 @@
+*{padding:0;margin:0;list-style:none;border:0 none;text-decoration:none;color:#fff;}
+body{
+    background-color:#eee;
+    overflow-x: hidden;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('../iconfont/iconfont.eot');
+    src: url('../iconfont/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../iconfont/iconfont.woff') format('woff'),
+    url('../iconfont/iconfont.ttf') format('truetype'),
+    url('../iconfont/iconfont.svg#iconfont') format('svg');
+}
+@font-face {
+    font-family: 'icon-font';
+    src: url('../search/iconfont.eot');
+    src: url('../search/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('../search/iconfont.woff') format('woff'),
+    url('../search/iconfont.ttf') format('truetype'),
+    url('../search/iconfont.svg#iconfont') format('svg');
+}

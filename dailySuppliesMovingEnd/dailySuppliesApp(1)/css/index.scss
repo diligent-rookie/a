@@ -1,0 +1,129 @@
+@charset "UTF-8";
+@function px2rem($px){
+  //750/10  分10份
+  $rem:75px;
+  @return ($px/$rem)+rem;
+}
+$bodyWidth:px2rem(750px);
+@import "base.css";
+body{
+    width:$bodyWidth;
+}
+.icon-location{
+  font-family:"icon-font" !important;
+  color:#fff;
+  font-size:px2rem(34px);
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-style:normal;
+}
+nav ul ,footer ul{
+  width:$bodyWidth;
+  height:px2rem(90px);
+  /*当padding采用百分比形式时以父元素的宽度为基准*/
+  display:flex;
+  background-color:#e44a43;
+  justify-content:space-around;
+}
+nav ul li,footer ul li{
+  font-family: "microsoft yahei";
+  color:#fff;
+  text-align:center;
+}
+nav ul a:hover,footer ul a:hover{
+  color: #86ffb1;
+}
+nav ul li{
+  height:px2rem(90px);
+  line-height:px2rem(90px);
+}
+section{
+  width:$bodyWidth;
+  height:px2rem(348px);
+  background:url("../images/banner.jpg") no-repeat center center;
+  background-size:cover;
+}
+section .search{
+  display: flex;
+  width:$bodyWidth;
+  height:px2rem(78px);
+  justify-content:space-around;
+  align-items: center;
+  background-color:rgba(0,0,0,0.3);
+}
+.search .inp{
+  width:px2rem(568px);
+  height: px2rem(40px);
+  display: flex;
+  justify-content:flex-end;
+  position:relative;
+  line-height:px2rem(40px);
+  color:#ccc;
+  padding-left:10px;
+}
+.inp .search-nav{
+  width:px2rem(568px);
+  height: px2rem(40px);
+  border:1px solid #eee;
+  border-radius:px2rem(20px);
+  line-height:px2rem(40px);
+  background-color:rgba(0,0,0,0.3);
+}
+label{
+  position:absolute;
+  left:px2rem(200px);
+  top:px2rem(3px);
+}
+section  #inp{
+  padding-left:px2rem(20px);
+  color:#ccc;
+}
+.inp span{
+  font-family:"icon-font" !important;
+  color:#fff;
+  position:absolute;
+  right:px2rem(20px);
+  top:px2rem(3px);
+}
+.area{
+  width:$bodyWidth;
+  height:px2rem(144px);
+  display:flex;
+  text-align:center;
+  background-color:#fff;
+  justify-content:space-around;
+  align-items:center;
+}
+.area li{
+  width:px2rem(147px);
+  height:px2rem(113px);
+  border-radius:20%;
+  line-height:px2rem(113px);
+}
+.new{
+  width:$bodyWidth;
+  height:auto;
+  margin:px2rem(10px) auto;
+  background-color:#fff;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+ul.new li{
+  width:40%;
+  height:auto;
+  margin:px2rem(10px);
+}
+.new li img{
+  width:100%;
+  height:auto;
+}
+.banners{
+  width:$bodyWidth;
+}
+.banners img{
+  display: block;
+  width:$bodyWidth;
+  height:auto;
+}

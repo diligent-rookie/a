@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" style="font-size:1px;">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="htmlFontsize.js"></script>
+    <style>
+        @media screen and (max-width:749px){
+            body{
+                font-size:12px;
+            }
+            nav,footer{
+                font-size:30px;
+            }
+            .area{
+                font-size:28px;
+            }
+        }
+
+        @media screen and (min-width:750px) and (max-width:850px){
+            body{
+                font-size:16px;
+            }
+            nav,footer{
+                font-size:28px;
+            }
+            .area{
+                font-size:32px;
+            }
+        }
+
+        @media screen and (min-width:850px){
+            body{
+                font-size:18px;
+            }
+            nav,footer{
+                font-size:45px;
+            }
+            .area{
+                font-size:48px;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav>
+    <ul>
+        <li><a href="#">返回</a></li>
+        <li><a href="#">商城</a></li>
+        <li class="iconfont"><a href="#">&#xe635;</a></li>
+    </ul>
+</nav>
+<section>
+    <div class="search">
+        <span class="icon-location">&#xe602;</span>
+        <div class="inp">
+            <label for="inp">红酒炖牛腩</label><input class="search-nav" id="inp"/>
+            <span>&#xe734;</span>
+        </div>
+    </div>
+</section>
+<ul class="area">
+    <li>荞麦专区</li>
+    <li>有机专区</li>
+    <li>五谷杂粮</li>
+    <li>地方特产</li>
+</ul>
+<ul class="new">
+    <li><img src="images/pic1.jpg" alt=""></li>
+    <li><img src="images/pic2.jpg" alt=""></li>
+    <li><img src="images/pic3.jpg" alt=""></li>
+    <li><img src="images/pic4.jpg" alt=""></li>
+</ul>
+<ul class="banners">
+    <li><img src="images/banner1.jpg" alt=""></li>
+    <li><img src="images/banner2.jpg" alt=""></li>
+    <li><img src="images/banner3.jpg" alt=""></li>
+    <li><img src="images/banner4.jpg" alt=""></li>
+    <li><img src="images/banner5.jpg" alt=""></li>
+    <li><img src="images/banner6.jpg" alt=""></li>
+</ul>
+<footer>
+    <ul>
+        <li class="iconfont"><a href="#">&#xe654;</a><br><span>首页</span></li>
+        <li class="iconfont"><a href="#">&#xe60b;</a><br><span>分类</span></li>
+        <li class="iconfont"><a href="#">&#xe600;</a><br><span>购物车</span></li>
+        <li class="iconfont"><a href="#">&#xe601;</a><br><span>我的</span></li>
+    </ul>
+</footer>
+<script>
+    var oSection=document.getElementsByTagName("section")[0];
+    var oLabel=oSection.getElementsByTagName("label")[0];
+    var inp=oSection.getElementsByTagName("input")[0];
+    var oArea=document.getElementsByTagName("ul")[1];
+    var links=oArea.getElementsByTagName("li");
+    var arr=["#e34a42","#b48c51","#f49ba1","#f5b44e"];
+    inp.onfocus=function(){
+        oLabel.style.display="none";
+    }
+    inp.onblur=function(){
+        if(!inp.value){
+            oLabel.style.display="block";
+        }
+    }
+    for(var i=0;i<links.length;i++){
+        links[i].style.backgroundColor=arr[i];
+        var color=null;
+        links[i].onmouseover=function(){
+            color=this.style.backgroundColor;
+            this.style.backgroundColor="red";
+        }
+        links[i].onmouseout=function(){
+            this.style.backgroundColor=color;
+        }
+    }
+</script>
+
+</body>
+</html>
