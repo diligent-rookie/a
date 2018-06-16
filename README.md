@@ -102,3 +102,37 @@ IOS8下已经支持带小数的px值, media query对应devicePixelRatio有个查
   >  flexible.rem = win.rem = rem;
   >}
   >```
+ px和rem相互转换的计算方法会暴露在window.lib.flexible中. 这样可以为less/sass编写宏方法. 具体的css改写方法参照大漠的文章http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html**项目中特别指出了为了防止字体模糊, 出现奇数字号的字体, 字体的实际单位还是要以px为单位.**<br>
+ **缺点: 不适用安卓, flexible内部做了检测 非iOS机型还是采用传统的scale=1.0, 原因在于安卓手机不一定有devicePixelRatio属性, 就算有也不一定能响应scale小于1的viewport缩放设置, 例如我的手机设置了scale=0.33333333, 显示的结果也与scale=1无异.**
+* 综合使用:对于IOS, flexible.js处理的已经很好了, 对于Android,方法2,3,4结合起来大体可以满足要求. flexible.js虽然不适用于安卓, 但它里面的这一段代码可以用来做对安卓机的部署.
+>```javascript
+>if (!dpr && !scale) {
+>    var isAndroid = win.navigator.appVersion.match(/android/gi);
+>    var isIPhone = win.navigator.appVersion.match(/iphone/gi);
+>    var devicePixelRatio = win.devicePixelRatio;
+>    if (isIPhone) {
+>        // iOS下，对于2和3的屏，用2倍的方案，其余的用1倍方案
+>        if (devicePixelRatio >= 3 && (!dpr || dpr >= 3)) {                
+>            dpr = 3;
+>        } else if (devicePixelRatio >= 2 && (!dpr || dpr >= 2)){
+>            dpr = 2;
+>        } else {
+>            dpr = 1;
+>        }
+>    } else {
+>        // 其他设备下，仍旧使用1倍的方案
+>        dpr = 1;
+>    }
+>    scale = 1 / dpr;
+>}
+>```
+**这里对安卓做检测, 如果是安卓, js动态加载css.**
+>```javascript
+>var link = document.createElement('link');
+>link.setAttribute("rel","stylesheet");
+>link.setAttribute("type","text/css");
+>link.setAttribute("href",".......Android.css");
+>document.querySelector('head').appendChild(link);
+>```
+
+>详情见https://www.cnblogs.com/lunarorbitx/p/5287309.html
